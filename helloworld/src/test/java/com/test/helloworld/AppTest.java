@@ -1,4 +1,4 @@
-package com.test.helloworld;
+package helloworld.src.test.java.com.test.helloworld;
 
 import static org.junit.Assert.assertTrue;
 
