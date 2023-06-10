@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Github') {
+            steps {
+                    echo '########################### Cloning code from  GitHub... ###########################'
+                    // Get some code from a GitHub repository
+                    git branch: 'main', url: 'https://github.com/mpandav/hello-world.git/'
+            }
+        }    
+        stage('Package') {
+            steps {
+                    echo '########################### Maven Test... ###########################'
+                    // Get some code from a GitHub repository
+                    sh "mvn -f helloworld/pom.xml clean test package"
+                }
+        }
+        stage('Run') {
+            steps {
+                    echo '########################### Run Java App... ###########################'
+                    // Get some code from a GitHub repository
+                    sh "java -cp helloworld/target/helloworld-1.0-SNAPSHOT.jar com.test.helloworld.App "
+                }
+        }
+    }
+}
