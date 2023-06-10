@@ -1,4 +1,4 @@
-package helloworld.src.main.java.com.test.helloworld;
+package com.test.helloworld;
 
 /**
  * Hello world!
